@@ -21,7 +21,7 @@ namespace proyectoProgra6.Models
         public bool? IsBlocked { get; set; }
         public int FkUsuarioRol { get; set; }
 
-        public virtual UsuarioRol FkUsuarioRolNavigation { get; set; } = null!;
+        public virtual UsuarioRol? UsuarioRol { get; set; } = null!;
         public virtual ICollection<Viaje> Viajes { get; set; }
     }
 }

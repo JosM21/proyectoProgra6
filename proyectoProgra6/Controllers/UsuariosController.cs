@@ -67,6 +67,8 @@ namespace proyectoProgra6.Controllers
         }
 
 
+
+
         [HttpGet("GetUserInfoByEmail")]
         public ActionResult<IEnumerable<UsuarioDTO>> GetUserInfoByEmail(string Pemail)
         {
@@ -107,8 +109,8 @@ namespace proyectoProgra6.Controllers
                     Name = item.name,
                     BackupEmail = item.backupemail,
                     Phone = item.phone,
-                    Addres = item.address,
-                    Activa = item.active,
+                    Address = item.address,
+                    Active = item.active,
                     ItsBlocked = item.isBlocked,
                     IDRol = item.idrol,
                     DescriptionRol = item.descripcionrol

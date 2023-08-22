@@ -14,8 +14,8 @@
         public string Name { get; set; } = null!;
         public string BackupEmail { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        public string? Addres { get; set; }
-        public bool? Activa { get; set; }
+        public string? Address { get; set; }
+        public bool? Active { get; set; }
         public bool? ItsBlocked { get; set; }
         public int IDRol { get; set; }
         public string DescriptionRol { get; set; } = null!;

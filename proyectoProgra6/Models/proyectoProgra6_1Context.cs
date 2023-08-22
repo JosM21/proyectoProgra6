@@ -259,7 +259,7 @@ namespace proyectoProgra6.Models
                     .IsUnicode(false)
                     .HasColumnName("telefono");
 
-                entity.HasOne(d => d.FkUsuarioRolNavigation)
+                entity.HasOne(d => d.UsuarioRol)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.FkUsuarioRol)
                     .OnDelete(DeleteBehavior.ClientSetNull)
