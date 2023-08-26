@@ -12,7 +12,7 @@ namespace proyectoProgra6.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiKey]
+    //[ApiKey]
     public class RecorridosController : ControllerBase
     {
         private readonly proyectoProgra6_1Context _context;
@@ -20,6 +20,26 @@ namespace proyectoProgra6.Controllers
         public RecorridosController(proyectoProgra6_1Context context)
         {
             _context = context;
+        }
+
+        //GET: api/Protocols/GetProtocolListByUser?id=4
+        //Pensando en colecciones observables esta función podría entregar un enumerable
+        //(obviamente usamos su interface)
+        [HttpGet("GetRecorridoListByID")]
+        public async Task<ActionResult<IEnumerable<Recorrido>>> GetRecorridoListByID(int id)
+        {
+            if (_context.Recorridos == null)
+            {
+                return NotFound();
+            }
+            var recorridoList = await _context.Recorridos.Where(p => p.IdRecorrido.Equals(id)).ToListAsync();
+
+            if (recorridoList == null)
+            {
+                return NotFound();
+            }
+
+            return recorridoList;
         }
 
         // GET: api/Recorridos

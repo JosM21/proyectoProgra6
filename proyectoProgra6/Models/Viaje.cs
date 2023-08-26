@@ -19,10 +19,10 @@ namespace proyectoProgra6.Models
         public string Costo { get; set; } = null!;
         public bool? Active { get; set; }
         public bool? IsBlocked { get; set; }
-        public int FkHospedaje { get; set; }
-        public int? FkUsuario { get; set; }
+        public int? FkHospedaje { get; set; }
+        public int FkUsuario { get; set; }
 
-        public virtual Hospedaje FkHospedajeNavigation { get; set; } = null!;
+        public virtual Hospedaje? FkHospedajeNavigation { get; set; } = null!;
         public virtual Usuario? FkUsuarioNavigation { get; set; }
         public virtual ICollection<ClienteViaje> ClienteViajes { get; set; }
         public virtual ICollection<Itinerario> Itinerarios { get; set; }

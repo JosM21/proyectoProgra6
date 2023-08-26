@@ -12,7 +12,7 @@ namespace proyectoProgra6.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiKey]
+    //[ApiKey]
     public class HospedajesController : ControllerBase
     {
         private readonly proyectoProgra6_1Context _context;
@@ -20,6 +20,26 @@ namespace proyectoProgra6.Controllers
         public HospedajesController(proyectoProgra6_1Context context)
         {
             _context = context;
+        }
+
+        //GET: api/Protocols/GetProtocolListByUser?id=4
+        //Pensando en colecciones observables esta función podría entregar un enumerable
+        //(obviamente usamos su interface)
+        [HttpGet("GetHospedajeListByHotel")]
+        public async Task<ActionResult<IEnumerable<Hospedaje>>> GetHospedajeListByHotel(int id)
+        {
+            if (_context.Hospedajes == null)
+            {
+                return NotFound();
+            }
+            var hospedajeList = await _context.Hospedajes.Where(p => p.IdHotel.Equals(id)).ToListAsync();
+
+            if (hospedajeList == null)
+            {
+                return NotFound();
+            }
+
+            return hospedajeList;
         }
 
         // GET: api/Hospedajes

@@ -12,7 +12,7 @@ namespace proyectoProgra6.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiKey]
+    //[ApiKey]
     public class ClienteViajesController : ControllerBase
     {
         private readonly proyectoProgra6_1Context _context;

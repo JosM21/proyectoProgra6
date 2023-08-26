@@ -17,6 +17,6 @@ namespace proyectoProgra6.Models
         public bool? Active { get; set; }
         public bool? IsBlocked { get; set; }
 
-        public virtual ICollection<Viaje> Viajes { get; set; }
+        public virtual ICollection<Viaje>? Viajes { get; set; }
     }
 }

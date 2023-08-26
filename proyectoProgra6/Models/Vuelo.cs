@@ -14,7 +14,7 @@ namespace proyectoProgra6.Models
         public string? HoraAterrizaje { get; set; }
         public bool? Active { get; set; }
         public bool? IsBlocked { get; set; }
-        public int FkViaje { get; set; }
+        public int? FkViaje { get; set; }
 
         public virtual Viaje FkViajeNavigation { get; set; } = null!;
     }

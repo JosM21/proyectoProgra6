@@ -316,8 +316,6 @@ namespace proyectoProgra6.Models
 
                 entity.Property(e => e.FkHospedaje).HasColumnName("fkHospedaje");
 
-                entity.Property(e => e.FkUsuario).HasColumnName("fkUsuario");
-
                 entity.Property(e => e.IsBlocked)
                     .IsRequired()
                     .HasDefaultValueSql("('0')");
@@ -328,10 +326,6 @@ namespace proyectoProgra6.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Viaje__fkHospeda__440B1D61");
 
-                entity.HasOne(d => d.FkUsuarioNavigation)
-                    .WithMany(p => p.Viajes)
-                    .HasForeignKey(d => d.FkUsuario)
-                    .HasConstraintName("FK__Viaje__fkUsuario__44FF419A");
             });
 
             modelBuilder.Entity<Vuelo>(entity =>

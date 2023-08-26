@@ -12,7 +12,7 @@ namespace proyectoProgra6.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [ApiKey]
+    //[ApiKey]
     public class ViajesController : ControllerBase
     {
         private readonly proyectoProgra6_1Context _context;
@@ -21,6 +21,7 @@ namespace proyectoProgra6.Controllers
         {
             _context = context;
         }
+
 
         // GET: api/Viajes
         [HttpGet]
